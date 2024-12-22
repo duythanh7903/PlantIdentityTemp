@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutToolTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/icBack"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/icFlash"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/state_ic_flash"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/fr_ads"
+            app:layout_constraintTop_toBottomOf="@id/layoutToolTop">
+
+            <com.otaliastudios.cameraview.CameraView
+                android:id="@+id/camera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:keepScreenOn="true"
+                app:cameraAudio="off"
+                app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+                app:cameraEngine="camera1"
+                app:cameraExperimental="true"
+                app:cameraFacing="back"
+                app:cameraFlash="auto"
+                app:cameraGestureLongTap="none"
+                app:cameraGesturePinch="none"
+                app:cameraGestureScrollHorizontal="none"
+                app:cameraGestureScrollVertical="none"
+                app:cameraGestureTap="autoFocus"
+                app:cameraGrid="draw3x3"
+                app:cameraMode="picture"
+                app:cameraPlaySounds="true"
+                app:cameraPreview="glSurface"
+                app:cameraUseDeviceOrientation="false" />
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutToolBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:paddingVertical="@dimen/_20sdp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/fr_ads">
+
+            <ImageView
+                android:id="@+id/imgTakePhoto"
+                android:layout_width="@dimen/_72sdp"
+                android:layout_height="@dimen/_72sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/img_take_photo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/btnAlbum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/imgTakePhoto"
+                app:layout_constraintEnd_toStartOf="@id/imgTakePhoto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imgTakePhoto">
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_albums" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/album"
+                    android:textColor="@color/txt_white"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnSnapTips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/imgTakePhoto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgTakePhoto"
+                app:layout_constraintTop_toTopOf="@id/imgTakePhoto">
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_snap_tips" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/snap_tips"
+                    android:textColor="@color/txt_white"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutToolTop"
+            app:layout_constraintBottom_toTopOf="@id/layoutToolBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/detect_view" />
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/layoutSnapTips"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#CC000000"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvSnapTips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/snap_tips"
+                android:textColor="@color/txt_white"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginVertical="@dimen/_12sdp"
+                app:layout_constraintBottom_toTopOf="@id/btnUnderStand"
+                app:layout_constraintTop_toBottomOf="@id/tvSnapTips">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_snap_tips_pass"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:riv_corner_radius="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_margin="@dimen/_12sdp"
+                    android:src="@drawable/ic_tick_square"
+                    app:layout_constraintStart_toStartOf="@id/imgPass"
+                    app:layout_constraintTop_toTopOf="@id/imgPass" />
+
+                <TextView
+                    android:id="@+id/tvGuideTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/the_following_will_lead_to_poor_results"
+                    android:textColor="@color/txt_white"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/imgPass"
+                    app:layout_constraintStart_toStartOf="@id/imgPass"
+                    app:layout_constraintTop_toBottomOf="@id/imgPass" />
+
+                <View
+                    android:id="@+id/viewLineTextGuide"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/tvGuideTitle"
+                    app:layout_constraintStart_toStartOf="@id/tvGuideTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvGuideTitle" />
+
+                <View
+                    android:id="@+id/viewCenterVerticalSupported"
+                    android:layout_width="@dimen/_8sdp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLineTextGuide" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgTooDark"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_74sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_snap_tips_too_dark"
+                    app:layout_constraintEnd_toStartOf="@id/viewCenterVerticalSupported"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/viewCenterVerticalSupported"
+                    app:riv_corner_radius="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/tvTooDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/too_dark"
+                    android:textColor="@color/txt_white"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/imgTooDark"
+                    app:layout_constraintStart_toStartOf="@id/imgTooDark"
+                    app:layout_constraintTop_toBottomOf="@id/imgTooDark" />
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_clear_square"
+                    app:layout_constraintStart_toStartOf="@id/imgTooDark"
+                    app:layout_constraintTop_toTopOf="@id/imgTooDark" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgTooFar"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_74sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_snap_tips_too_far"
+                    app:layout_constraintBottom_toBottomOf="@id/imgTooDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/viewCenterVerticalSupported"
+                    app:layout_constraintTop_toTopOf="@id/imgTooDark"
+                    app:riv_corner_radius="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/tvTooFar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textColor="@color/txt_white"
+                    android:text="@string/too_far"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/imgTooFar"
+                    app:layout_constraintStart_toStartOf="@id/imgTooFar"
+                    app:layout_constraintTop_toBottomOf="@id/imgTooFar" />
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_clear_square"
+                    app:layout_constraintStart_toStartOf="@id/imgTooFar"
+                    app:layout_constraintTop_toTopOf="@id/imgTooFar" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgBlurry"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_74sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_snap_tips_blurry"
+                    app:layout_constraintStart_toStartOf="@id/imgTooDark"
+                    app:layout_constraintEnd_toEndOf="@id/imgTooDark"
+                    app:layout_constraintTop_toBottomOf="@id/tvTooDark"
+                    app:riv_corner_radius="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/tvBlurry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/blurry"
+                    android:textColor="@color/txt_white"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/imgBlurry"
+                    app:layout_constraintStart_toStartOf="@id/imgBlurry"
+                    app:layout_constraintTop_toBottomOf="@id/imgBlurry" />
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_clear_square"
+                    app:layout_constraintStart_toStartOf="@id/imgBlurry"
+                    app:layout_constraintTop_toTopOf="@id/imgBlurry" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgMu"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_74sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_snap_tips_multiple_types"
+                    app:layout_constraintBottom_toBottomOf="@id/imgBlurry"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/viewCenterVerticalSupported"
+                    app:layout_constraintTop_toTopOf="@id/imgBlurry"
+                    app:riv_corner_radius="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/tvMu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textColor="@color/txt_white"
+                    android:text="@string/multiple_types"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/imgMu"
+                    app:layout_constraintStart_toStartOf="@id/imgMu"
+                    app:layout_constraintTop_toBottomOf="@id/imgMu" />
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_clear_square"
+                    app:layout_constraintStart_toStartOf="@id/imgMu"
+                    app:layout_constraintTop_toTopOf="@id/imgMu" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/btnUnderStand"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:background="@drawable/bg_btn_understand_snap_tips"
+                android:fontFamily="@font/nunito_bold"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/understand"
+                android:textAlignment="center"
+                android:textColor="@color/txt_white"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fr_ads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include layout="@layout/layout_banner_control" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

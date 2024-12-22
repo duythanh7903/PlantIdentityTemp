@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_white"
+        android:orientation="vertical">
+
+        <!--    Layout Top    -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutWeatherInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/bgWeather"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_weather_home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius_bottom_left="@dimen/_20sdp"
+                app:riv_corner_radius_bottom_right="@dimen/_20sdp" />
+
+            <ImageView
+                android:id="@+id/icLocationHome"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_location_home"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLocationUnavailable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/location_unavailable"
+                android:textColor="@color/txt_white"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/icLocationHome"
+                app:layout_constraintStart_toEndOf="@id/icLocationHome"
+                app:layout_constraintTop_toTopOf="@id/icLocationHome"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvTapToEnable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:fontFamily="@font/nunito_medium"
+                android:text="@string/tap_to_enable_geolocation_get_weather_updates"
+                android:textColor="@color/txt_white"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvLocationUnavailable"
+                app:layout_constraintTop_toBottomOf="@id/icLocationHome" />
+
+            <TextView
+                android:id="@+id/tvCityName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_bold"
+                android:textColor="@color/txt_white"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/tvLocationUnavailable"
+                app:layout_constraintStart_toStartOf="@id/tvLocationUnavailable"
+                app:layout_constraintTop_toTopOf="@id/tvLocationUnavailable"
+                tools:text="Ha Noi" />
+
+            <TextView
+                android:id="@+id/tvWeatherInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_medium"
+                android:textColor="@color/txt_white"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/tvTapToEnable"
+                app:layout_constraintStart_toStartOf="@id/icLocationHome"
+                app:layout_constraintTop_toTopOf="@id/tvTapToEnable"
+                tools:text="Sunny 10°C / 32°C" />
+
+            <ImageView
+                android:id="@+id/icSettingHome"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_setting_home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/icVip"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:background="@drawable/ic_vip"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@id/icSettingHome"
+                app:layout_constraintEnd_toStartOf="@id/icSettingHome"
+                app:layout_constraintTop_toTopOf="@id/icSettingHome"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/anim_vip" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    Layout Bottom Bar    -->
+        <LinearLayout
+            android:id="@+id/layoutBottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_bar_home"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/btnTabHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icTabHome"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/state_ic_home" />
+
+                <TextView
+                    android:id="@+id/tvTabHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/home"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnTabMyPlant"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icTabMyPlant"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/state_ic_my_plant" />
+
+                <TextView
+                    android:id="@+id/tvTabMyPlant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="@string/my_plant"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--    Button Add    -->
+        <ImageView
+            android:id="@+id/imgAdd"
+            android:layout_width="@dimen/_72sdp"
+            android:layout_height="@dimen/_72sdp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_add"
+            app:layout_constraintBottom_toBottomOf="@id/layoutBottomBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layoutBottomBar" />
+
+        <!--    Layout Show Content    -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpgHome"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layoutBottomBar"
+            app:layout_constraintTop_toBottomOf="@id/layoutWeatherInformation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

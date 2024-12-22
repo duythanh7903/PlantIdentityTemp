@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="adjust_token" translatable="false">uz0ufkssk2yo</string>
+    <string name="facebook_app_id" translatable="false">4015546068770572</string>
+    <string name="facebook_client_token" translatable="false">604557b19d207f2eeab416a0b33e97fd</string>
+    <string name="event_token" translatable="false">12345</string>
+
+</resources>

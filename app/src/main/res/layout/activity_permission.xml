@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_white">
+
+        <TextView
+            android:id="@+id/tvScreenName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="center"
+            android:text="@string/grand_permission"
+            android:textAlignment="center"
+            android:textColor="@color/txt_dark"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@id/relay_ads"
+            app:layout_constraintTop_toBottomOf="@id/tvScreenName">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_20sdp">
+
+                <ImageView
+                    android:id="@+id/imgPermission"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/img_permission"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/btnRqCameraPermission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/bg_btn_rq_permission"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_12sdp"
+                    app:layout_constraintTop_toBottomOf="@id/imgPermission">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/camera_access"
+                            android:textColor="@color/txt_dark"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/nunito_medium"
+                            android:text="@string/allow_collection_usage_statistics_of_apps_in_device"
+                            android:textColor="@color/txt_description"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/swCameraPermission"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/state_ic_sw" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnRqLocationPermission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bg_btn_rq_permission"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_12sdp"
+                    app:layout_constraintTop_toBottomOf="@id/btnRqCameraPermission">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/location_access"
+                            android:textColor="@color/txt_dark"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/nunito_medium"
+                            android:text="@string/allow_collection_usage_statistics_of_apps_in_device"
+                            android:textColor="@color/txt_description"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/swLocationPermission"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/state_ic_sw" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnGo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:background="@drawable/state_bg_btn_go_permission"
+                    android:fontFamily="@font/nunito_bold"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/go"
+                    android:textAlignment="center"
+                    android:textColor="@color/txt_white"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/btnRqLocationPermission"
+                    app:layout_constraintStart_toStartOf="@id/btnRqLocationPermission"
+                    app:layout_constraintTop_toBottomOf="@id/btnRqLocationPermission" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/relay_ads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <FrameLayout
+                android:id="@+id/fr_ads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <include
+                    android:id="@+id/layout_shimmer"
+                    layout="@layout/ads_shimmer_native_small"/>
+            </FrameLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

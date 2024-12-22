@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_add_remind"
+        android:padding="@dimen/_12sdp">
+
+        <LinearLayout
+            android:id="@+id/layoutTimePicker"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_72sdp"
+            android:background="@drawable/bg_wheel_picker"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.duylt.lib.wheel_picker.WheelPicker
+                android:id="@+id/numberPickerHour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:selectedTextColor="@color/txt_dark"
+                app:textColor="@color/txt_description"
+                android:layout_weight="1"
+                android:textSize="@dimen/_30ssp"
+                app:typeface="nunito" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_medium"
+                android:text=":"
+                android:textColor="@color/txt_dark"
+                android:textSize="@dimen/_32ssp"
+                tools:ignore="HardcodedText" />
+
+            <com.duylt.lib.wheel_picker.WheelPicker
+                android:id="@+id/numberPickerMinute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:selectedTextColor="@color/txt_dark"
+                app:textColor="@color/txt_description"
+                android:layout_weight="1"
+                android:textSize="@dimen/_30ssp"
+                app:typeface="nunito" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutDateOfWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            app:layout_constraintTop_toBottomOf="@id/layoutTimePicker">
+
+            <FrameLayout
+                android:id="@+id/btnM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvM"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_state_day_of_week"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/m"
+                    android:textSize="@dimen/_12ssp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btnT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvT"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_state_day_of_week"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/t"
+                    android:textSize="@dimen/_12ssp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btnW"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvW"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_state_day_of_week"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/w"
+                    android:textSize="@dimen/_12ssp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btnTh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvTh"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_state_day_of_week"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/th"
+                    android:textSize="@dimen/_12ssp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btnF"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvF"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_state_day_of_week"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/f"
+                    android:textSize="@dimen/_12ssp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btnSa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvSa"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_state_day_of_week"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/sa"
+                    android:textSize="@dimen/_12ssp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btnS"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvS"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_state_day_of_week"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/s"
+                    android:textSize="@dimen/_12ssp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPleaseChooseAtLeast1Day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:text="@string/please_choose_at_least_1_day"
+            android:textColor="@color/txt_red"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutDateOfWeek" />
+
+        <LinearLayout
+            android:id="@+id/btnSound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_btn_item_setting"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/tvPleaseChooseAtLeast1Day"
+            app:layout_goneMarginTop="@dimen/_12sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:text="@string/sound"
+                android:textColor="@color/txt_dark"
+                android:textSize="@dimen/_12ssp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvSoundName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:fontFamily="@font/nunito_medium"
+                android:text="@string/txt_default"
+                android:textColor="@color/txt_description"
+                android:textSize="@dimen/_12ssp"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit ="marquee_forever"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scrollHorizontally="true"/>
+
+            <ImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:src="@drawable/ic_next" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnVibration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_btn_item_setting"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/btnSound">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:text="@string/vibration"
+                android:textColor="@color/txt_dark"
+                android:textSize="@dimen/_12ssp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/icSwVibration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/state_ic_sw" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/bg_btn_item_setting"
+            android:fontFamily="@font/nunito_medium"
+            android:hint="@string/type_your_title_here"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:maxLength="30"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/txt_dark"
+            android:textCursorDrawable="@null"
+            android:textColorHint="@color/txt_description"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/btnVibration" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:text="@string/title"
+            android:textColor="@color/txt_dark"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/edtTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edtTitle" />
+
+        <TextView
+            android:id="@+id/tvPleasaeTypeYourTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:text="@string/please_type_your_title"
+            android:textColor="@color/txt_red"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtTitle" />
+
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_btn_item_setting"
+            android:fontFamily="@font/nunito_medium"
+            android:gravity="top|left"
+            android:maxLength="100"
+            android:hint="@string/describe_here"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="5"
+            android:padding="@dimen/_12sdp"
+            android:textColor="@color/txt_dark"
+            android:textColorHint="@color/txt_description"
+            android:textSize="@dimen/_12ssp"
+            android:textCursorDrawable="@null"
+            app:layout_constraintTop_toBottomOf="@id/tvPleasaeTypeYourTitle"
+            app:layout_goneMarginTop="@dimen/_8sdp"
+            tools:ignore="RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/edtDescription">
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_cancel_add_remind"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/cancel"
+                android:textColor="@color/txt_description"
+                android:textSize="@dimen/_12ssp" />
+
+            <Space
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_1sdp" />
+
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_try_again"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/save"
+                android:textColor="@color/txt_white"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
